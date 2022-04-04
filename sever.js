@@ -25,9 +25,8 @@ app.use(bodyParser.json());
 app.get("/", (req, res) => {
   res.json({ message: "Server is running :D" });
 });
-
-let PORT = 3000;
 require('./router/app.route.js')(app);
+/*let PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
-});
+});*/

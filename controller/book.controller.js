@@ -1,14 +1,15 @@
-const App = require("../model/book.model.js");
+const App = require("../model/boky.model.js");
 
 // Create and Save a new Message
 exports.create = (req, res) => {
   const message = new App({
-    message: req.body.message,
+    nom: req.body.nom,
+    auteur: req.body.auteur
   });
   message
     .save()
     .then((data) => {
-      res.send(data);
+      res.send({status:200,sdata: data });
     })
     .catch((err) => {
       res.status(500).send({
@@ -22,7 +23,8 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
   App.find()
     .then((data) => {
-      res.send(data);
+      res.send({status:200, resultFound: data.length,
+        data: data });
     })
     .catch((err) => {
       res.status(500).send({
@@ -118,7 +120,8 @@ exports.findComplet = (req, res) => {
         
       }])
       .then((data) => {
-        res.send(data);
+        res.send({status:200, resultFound: data.length,
+          data: data });
       })
       .catch((err) => {
         res.status(500).send({

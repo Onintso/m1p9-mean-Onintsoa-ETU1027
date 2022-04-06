@@ -1,0 +1,16 @@
+<div>
+    <h3>Modifier ID {{ idjoueur }} ({{ current_pseudo }}) </h3>
+    <section>
+        <label>Pseudo: </label>
+        <input type="text" [(ngModel)]="pseudo" class="large" required/>
+    </section>
+
+    <section>
+        <label>Age: </label>
+        <input type="number" [(ngModel)]="age" class="large" required/>
+    </section>
+
+    <button (click) = "modifier()">Modifier</button> 
+    <span class="error">{{ error_message }}</span> <br/>
+    <span class="success">{{ message }}</span> <br/>
+</div>

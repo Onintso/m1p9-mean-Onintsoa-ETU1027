@@ -1,0 +1,22 @@
+<h3>Livres</h3>
+{{ message }}
+<table class="my_table">
+    <tr>
+        <th>Nom</th>
+        <th>Auteur</th>
+        <th></th>
+        <th></th>
+    </tr>    
+    <tr *ngFor = "let joueur of joueurs">
+        <td class="right">{{ joueur.nom }}</td>
+        <td class="left">{{ joueur.auteur}}</td>
+        <td class="left">
+            <button (click) = "removeById(joueur.idjoueur)">Remove</button>
+        </td>
+        <td class="left">
+            <!--a [routerLink] = "['modifier']" [queryParams] = '{idjoueur : joueur.idjoueur, pseudo : joueur.pseudo}'>
+                <button>Update</button>
+            </a-->
+        </td>
+    </tr>
+</table>

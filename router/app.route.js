@@ -1,13 +1,18 @@
 module.exports = (app) => {
-    const App = require("../controller/app.controller.js");
+    const resto = require("../controller/restaurant.controller.js");
+    const plat = require("../controller/plat.controller.js");
   
-    app.post("/create", App.create);
+    app.post("/create-resto", resto.create);
+
+    app.post("/create-plat", plat.create);
   
-    app.get("/get-all", App.findAll);
+    app.get("/get-all-resto", resto.findAll);
+
+    app.get("/get-plat-resto/:idResto", plat.findByResto);
   
-    app.get("/message/:messageId", App.findOne);
+    app.get("/message/:messageId", resto.findOne);
   
-    app.put("/message/:messageId", App.update);
+    app.put("/message/:messageId", resto.update);
   
-    app.delete("/message/:messageId", App.delete);
+    app.delete("/message/:messageId", resto.delete);
   };

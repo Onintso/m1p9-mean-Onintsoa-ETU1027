@@ -1,16 +1,17 @@
-const App = require("../model/test.model.js");
+const App = require("../model/restaurant.model.js");
 
 // Create and Save a new Message
 exports.create = (req, res) => {
   const message = new App({
-    name : req.body.name
-    //nom: req.body.nom,
-    //auteur: req.body.auteur
-  });
+        nom: req.body.nom,
+        localisation: req.body.localisation,
+        ouverture: req.body.ouverture,
+        specificite: req.body.specificite
+    });
   message
     .save()
     .then((data) => {
-      res.send({status:200,sdata: data });
+      res.send({status:200, data: data });
     })
     .catch((err) => {
       res.status(500).send({
@@ -109,25 +110,3 @@ exports.delete = (req, res) => {
       });
     });
 };
-
-exports.findComplet = (req, res) => {
-    App.aggregate([{
-        $lookup:{
-            from: "category", //or Races.collection.name
-            localField: "cat",
-            foreignField: "_id",
-            as: "category"
-        },
-        
-      }])
-      .then((data) => {
-        res.send({status:200, resultFound: data.length,
-          data: data });
-      })
-      .catch((err) => {
-        res.status(500).send({
-          message:
-            err.message || "Some error occurred while retrieving messages.",
-        });
-      });
-    };

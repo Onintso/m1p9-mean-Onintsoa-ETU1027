@@ -3,7 +3,8 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/ekaly', 
+//mongoose.connect('mongodb://localhost:27017/ekaly', 
+  mongoose.connect('mongodb+srv://ekaly:ekaly123456@ekaly-cluster.qjan0.mongodb.net/ekaly',
     {
       useNewUrlParser: true,
     }
@@ -34,7 +35,7 @@ app.get("/", (req, res) => {
 });
 
 let PORT = 3000;
-require('./router/book.route.js')(app);
+require('./router/app.route.js')(app);
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });

@@ -1,16 +1,18 @@
-const App = require("../model/test.model.js");
+const { default: mongoose } = require("mongoose");
+const App = require("../model/plat.model.js");
 
 // Create and Save a new Message
 exports.create = (req, res) => {
   const message = new App({
-    name : req.body.name
-    //nom: req.body.nom,
-    //auteur: req.body.auteur
+    nom: req.body.nom,
+    prix_achat: req.body.pa,
+    prix_vente: req.body.pv,
+    restaurant: req.body.idResto
   });
   message
     .save()
     .then((data) => {
-      res.send({status:200,sdata: data });
+        res.send({status:200,sdata: data });
     })
     .catch((err) => {
       res.status(500).send({
@@ -24,8 +26,8 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
   App.find()
     .then((data) => {
-      res.send({status:200, resultFound: data.length,
-        data: data });
+        res.send({status:200, resultFound: data.length,
+            data: data });
     })
     .catch((err) => {
       res.status(500).send({
@@ -34,6 +36,25 @@ exports.findAll = (req, res) => {
       });
     });
 };
+
+// Retrieve all messages from the database with filter.
+exports.findByResto = (req, res) => {
+    console.log("idResto  "+req.params.idResto);
+    console.log("idResto mongoose  "+mongoose.Types.ObjectId(req.params.idResto));
+    App.find({
+        restaurant : mongoose.Types.ObjectId(req.params.idResto)
+    })
+      .then((data) => {
+        res.send({status:200, resultFound: data.length,
+          data: data });
+      })
+      .catch((err) => {
+        res.status(500).send({
+          message:
+            err.message || "Some error occurred while retrieving messages.",
+        });
+      });
+  };
 
 // Find a single message with a messageId
 exports.findOne = (req, res) => {
@@ -109,25 +130,3 @@ exports.delete = (req, res) => {
       });
     });
 };
-
-exports.findComplet = (req, res) => {
-    App.aggregate([{
-        $lookup:{
-            from: "category", //or Races.collection.name
-            localField: "cat",
-            foreignField: "_id",
-            as: "category"
-        },
-        
-      }])
-      .then((data) => {
-        res.send({status:200, resultFound: data.length,
-          data: data });
-      })
-      .catch((err) => {
-        res.status(500).send({
-          message:
-            err.message || "Some error occurred while retrieving messages.",
-        });
-      });
-    };

@@ -5,7 +5,7 @@ require('dotenv').config();
 process.env.ACCESS_TOKEN_SECRET;
 
 function generateAccessToken(user) {
-  return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1800s' });
+  return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
 }
 
 const user = {

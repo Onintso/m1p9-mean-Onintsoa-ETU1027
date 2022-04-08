@@ -1,8 +1,7 @@
 {
-  "scripts": {
-  "start": "node sever.js"
-},
-{
+	"scripts": {
+		"start": "node sever.js"
+	},
   "dependencies": {
     "body-parser": "^1.20.0",
     "dotenv": "^16.0.0",

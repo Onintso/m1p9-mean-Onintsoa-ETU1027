@@ -1,8 +1,4 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
-  "description": "node app",
-  "main": "sever.js",
   "scripts": {
   "start": "node sever.js"
 },

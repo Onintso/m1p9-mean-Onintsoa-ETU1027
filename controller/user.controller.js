@@ -7,6 +7,7 @@ exports.create = (req, res) => {
     prenom: req.body.prenom,
     num: req.body.num,
     mail: req.body.mail,
+    //mdp : hash.hash_pwd(req.body.mdp),
     mdp : hash.hash_pwd(req.body.mdp),
     type: req.body.type
   });

@@ -6,10 +6,126 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="assets/images/icons/favicon.png"/>
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/themify/themify-icons.css">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/animate/animate.css">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/css-hamburgers/hamburgers.min.css">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/animsition/css/animsition.min.css">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/select2/select2.min.css">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/daterangepicker/daterangepicker.css">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/slick/slick.css">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assets/vendor/lightbox2/css/lightbox.min.css">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assets/css/util.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+  <!--===============================================================================================-->
   <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet"> -->
   <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 </head>
 <body class="mat-typography">
+  <!-- Header -->
+	<header>
+		<!-- Header desktop -->
+		<div class="wrap-menu-header gradient1 trans-0-4">
+			<div class="container h-full">
+				<div class="wrap_header trans-0-3">
+					<!-- Logo -->
+					<div class="logo">
+						<a href="index.html">
+              <h1>E-Kaly</h1>
+							<!--<img src="../../../assets/images/icons/logo.png" alt="IMG-LOGO" data-logofixed="../../../assets/images/icons/logo2.png">-->
+						</a>
+					</div>
+
+					<!-- Menu -->
+					<div class="wrap_menu p-l-45 p-l-0-xl">
+						<nav class="menu">
+							<ul class="main_menu">
+								<li>
+									<a [routerLink] = "['/']" >Acceuil</a>
+								</li>
+
+								<li>
+									<a [routerLink] = "['/']">Panier</a>
+								</li>
+
+								<li>
+									<a [routerLink] = "['/login']">Mon compte</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
   <app-root></app-root>
+	<!-- Footer -->
+	<footer class="bg1">
+		<div class="end-footer bg2">
+			<div class="container">
+				<div class="flex-sb-m flex-w p-t-22 p-b-22">
+					<div class="p-t-5 p-b-5">
+						<a href="#" class="fs-15 c-white"><i class="fa fa-tripadvisor" aria-hidden="true"></i></a>
+						<a href="#" class="fs-15 c-white"><i class="fa fa-facebook m-l-18" aria-hidden="true"></i></a>
+						<a href="#" class="fs-15 c-white"><i class="fa fa-twitter m-l-18" aria-hidden="true"></i></a>
+					</div>
+
+					<div class="txt17 p-r-20 p-t-5 p-b-5">
+						Copyright &copy; 2018 All rights reserved  |  This template is made with <i class="fa fa-heart"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top bg0-hov" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<i class="fa fa-angle-double-up" aria-hidden="true"></i>
+		</span>
+	</div>
+
+<!--===============================================================================================-->
+<script type="text/javascript" src="assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="assets/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="assets/vendor/bootstrap/js/popper.js"></script>
+	<script type="text/javascript" src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="assets/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="assets/vendor/daterangepicker/moment.min.js"></script>
+	<script type="text/javascript" src="assets/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="assets/vendor/slick/slick.min.js"></script>
+	<script type="text/javascript" src="assets/js/slick-custom.js"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="assets/vendor/parallax100/parallax100.js"></script>
+	<script type="text/javascript">
+        $('.parallax100').parallax100();
+	</script>
+   <script src="https://unpkg.com/spinners-angular/elements/spinner-circular-es5.js"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="assets/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<!--<script type="text/javascript" src="assets/vendor/lightbox2/js/lightbox.min.js"></script>-->	
+<!--===============================================================================================-->
+	<script src="assets/js/main.js"></script>
 </body>
 </html>

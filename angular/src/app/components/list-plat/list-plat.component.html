@@ -1,0 +1,11 @@
+<h3>Plats</h3>
+<table class="my_table">
+    <tr>
+        <th>Nom</th>
+        <th>Prix</th>
+    </tr>    
+    <tr *ngFor = "let plat of plats">
+        <a >{{ plat.nom}}</a>
+        <td class="left">{{ plat.prix_achat}}</td>
+    </tr>
+</table>

@@ -27,7 +27,6 @@ export class ListeJoueursComponent implements OnInit {
       } else {
         this.message = 'Erreur requete';
       }
-        
     }
 
     const onError = response => {

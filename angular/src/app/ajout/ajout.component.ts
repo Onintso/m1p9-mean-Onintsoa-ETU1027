@@ -7,8 +7,8 @@ import { JoueurService } from '../services/joueur.service';
   styleUrls: ['./ajout.component.css']
 })
 export class AjoutComponent implements OnInit {
-  nom : any = '';
-  auteur : any = '';
+  mail : any = '';
+  mdp: any = '';
   message : any = '';
   
   constructor(private joueurServ : JoueurService) { }
@@ -19,11 +19,11 @@ export class AjoutComponent implements OnInit {
   ajouter () {
 
     const input = {
-      nom : this.nom,
-      auteur : this.auteur
+      mail : this.mail,
+      mdp : this.mdp
     };
-
     const onSuccess = response => {
+      console.log("connected1  ");
       if (response['status'] == 200) {
         this.message = 'Ajout ok';
       } else {
@@ -32,11 +32,12 @@ export class AjoutComponent implements OnInit {
     }
 
     const onError = response => {
+      console.log("not connected"+ response['message']);
       
     }
 
     try {
-      this.joueurServ.create(input).subscribe(onSuccess, onError);
+      this.joueurServ.login(input).subscribe(onSuccess, onError);
     } catch (err) {
       this.message = err;
     }

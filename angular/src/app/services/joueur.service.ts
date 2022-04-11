@@ -11,7 +11,17 @@ export class JoueurService {
   constructor(private http : HttpClient, private toolsServ : ToolsService) { }
   getAll () {
     //return this.http.get(base_url + 'joueur');
-    return this.http.get('http://localhost:3000/get-book-complet');
+    return this.http.get('https://m1p9meanonintsoa-ekaly.herokuapp.com/get-all-resto');
+  }
+
+  getRestoMenu (idResto) {
+    //return this.http.get(base_url + 'joueur');
+    return this.http.get('https://m1p9meanonintsoa-ekaly.herokuapp.com/get-plat-resto/'+idResto);
+  }
+
+  login(input){
+    const options = this.toolsServ.formOption(); // headers
+    return this.http.post('https://m1p9meanonintsoa-ekaly.herokuapp.com/login', input, options);
   }
 
   getByPseudo (keyword) {

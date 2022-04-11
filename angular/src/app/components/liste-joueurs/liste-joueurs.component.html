@@ -1,15 +1,16 @@
-<h3>Livres</h3>
-{{ message }}
+<h3>Restaurants</h3>
 <table class="my_table">
     <tr>
         <th>Nom</th>
-        <th>Auteur</th>
+        <th>Localisation</th>
         <th></th>
         <th></th>
     </tr>    
     <tr *ngFor = "let joueur of joueurs">
-        <td class="right">{{ joueur.nom }}</td>
-        <td class="left">{{ joueur.auteur}}</td>
+        <a [routerLink] = "['voir-menu']" [queryParams] = '{idResto : joueur._id}'>
+            {{ joueur.nom}}
+        </a>
+        <td class="left">{{ joueur.localisation}}</td>
         <td class="left">
             <button (click) = "removeById(joueur.idjoueur)">Remove</button>
         </td>

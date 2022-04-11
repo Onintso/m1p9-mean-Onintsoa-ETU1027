@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { AjoutComponent } from './ajout/ajout.component'; // DONT FORGET [ngModel]
 import { ListeJoueursComponent } from './components/liste-joueurs/liste-joueurs.component';
 import { SearchComponent } from './components/search/search.component';
+import { ListPlatComponent } from './components/list-plat/list-plat.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SearchComponent } from './components/search/search.component';
     ModifierComponent,
     AjoutComponent,
     ListeJoueursComponent,
-    SearchComponent
+    SearchComponent,
+    ListPlatComponent
   ],
   imports: [
     BrowserModule,
